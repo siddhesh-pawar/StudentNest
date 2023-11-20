@@ -1,18 +1,25 @@
-function validateForm() {
-    var name = document.getElementById("name").value;
-    var email = document.getElementById("email").value;
-    var password = document.getElementById("password").value;
-    var repassword = document.getElementById("repassword").value;
-
-    if (name === "" || email === "" || password === "" || repassword === "") {
-        alert("All fields are required");
-        return false;
+// This class performs client side validation
+class FormValidator {
+    constructor(name, email, password, confirmPassword) {
+        this.name = name;
+        this.email = email;
+        this.password = password;
+        this.confirmPassword = confirmPassword;
     }
 
-    if (password !== repassword) {
-        alert("Passwords do not match");
-        return false;
-    }
+    validateForm() {
+        if (this.name === "" || this.email === "" || this.password === "" || this.confirmPassword === "") {
+            alert("All fields are required");
+            return false;
+        }
 
-    return true;
+        if (this.password !== this.confirmPassword) {
+            alert("Passwords do not match");
+            return false;
+        }
+
+        return true;
+    }
 }
+
+module.exports = { FormValidator };
