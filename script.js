@@ -1,65 +1,61 @@
-document.addEventListener("DOMContentLoaded", function () {
-    var apartmentNameSelect = document.getElementById("apartmentNameSelect");
-    var apartmentLocationSelect = document.getElementById(
-      "apartmentLocationSelect"
-    );
-    var apartmentNameInput = document.getElementById("apartmentName");
-    var apartmentLocationInput = document.getElementById("apartmentLocation");
-  
-    var apartmentNames = [
+class ApartmentForm {
+  constructor() {
+    this.apartmentNameSelect = document.getElementById("apartmentNameSelect");
+    this.apartmentLocationSelect = document.getElementById("apartmentLocationSelect");
+    this.apartmentNameInput = document.getElementById("apartmentName");
+    this.apartmentLocationInput = document.getElementById("apartmentLocation");
+
+    this.apartmentNames = [
       "Collective On 4th",
       "CYAN PDX",
       "Goose Hollow",
       "University Pointe",
       "SKY 3"
     ];
-    var apartmentLocations = [
+    this.apartmentLocations = [
       "1818 SW 4th Ave",
       "1720 SW 4th Ave",
       "1450 SW Jefferson St",
       "1955 SW 5th Ave",
       "1221 SW 11th Ave"
     ];
-    var numBedroomsOptions = ["1", "2", "3", "4"];
-    var petsOptions = ["Yes", "No"];
-  
-  
-    populateDropdown(apartmentNames, apartmentNameSelect);
-    populateDropdown(apartmentLocations, apartmentLocationSelect);
-    populateDropdown(
-      numBedroomsOptions,
-      document.getElementById("numBedroomsSelect")
-    );
-    populateDropdown(petsOptions, document.getElementById("petsSelect")); // Update the dropdown for number of bedrooms
-  
-    apartmentNameSelect.addEventListener("change", function () {
-      updateInputField("apartmentNameSelect", "apartmentName");
-    });
-  
-    apartmentLocationSelect.addEventListener("change", function () {
-      updateInputField("apartmentLocationSelect", "apartmentLocation");
-    });
-    numBedroomsSelect.addEventListener("change", function () {
-      updateInputField("numBedroomsSelect", "numBedrooms");
-    });
-    petsSelect.addEventListener("change", function () {
-      updateInputField("petsSelect", "pets");
-    });
-  });
-  
-  function populateDropdown(options, selectElement) {
-    options.forEach(function (option) {
-      var optionElement = document.createElement("option");
+    this.numBedroomsOptions = ["1", "2", "3", "4"];
+    this.petsOptions = ["Yes", "No"];
+
+    this.init();
+  }
+
+  init() {
+    this.populateDropdown(this.apartmentNames, this.apartmentNameSelect);
+    this.populateDropdown(this.apartmentLocations, this.apartmentLocationSelect);
+    this.populateDropdown(this.numBedroomsOptions, document.getElementById("numBedroomsSelect"));
+    this.populateDropdown(this.petsOptions, document.getElementById("petsSelect"));
+
+    this.addChangeEventListeners();
+  }
+
+  populateDropdown(options, selectElement) {
+    options.forEach(option => {
+      const optionElement = document.createElement("option");
       optionElement.value = option;
       optionElement.text = option;
       selectElement.add(optionElement);
     });
   }
-  
-  function updateInputField(selectId, inputId) {
-    var selectedValue = document.getElementById(selectId).value;
+
+  addChangeEventListeners() {
+    this.apartmentNameSelect.addEventListener("change", () => this.updateInputField("apartmentNameSelect", "apartmentName"));
+    this.apartmentLocationSelect.addEventListener("change", () => this.updateInputField("apartmentLocationSelect", "apartmentLocation"));
+    document.getElementById("numBedroomsSelect").addEventListener("change", () => this.updateInputField("numBedroomsSelect", "numBedrooms"));
+    document.getElementById("petsSelect").addEventListener("change", () => this.updateInputField("petsSelect", "pets"));
+  }
+
+  updateInputField(selectId, inputId) {
+    const selectedValue = document.getElementById(selectId).value;
     document.getElementById(inputId).value = selectedValue;
   }
+
+}
   
   function submitForm() {
   
