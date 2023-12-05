@@ -400,3 +400,91 @@ input, button{
     }
 
 }
+
+/* User registration */
+/* styles.css */
+
+.user_registration {
+    width: 100%;
+    padding: 10px;
+    background-color: #cbf7d8;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.user_registration h2{
+    text-align: center;
+    font-weight: bold;
+}
+
+.user_registration
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 90%;
+    padding: 5px;
+    margin-bottom: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-left: 10px;
+}
+
+.user_registration .user_login
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+.container {
+    border: 1px solid rgb(66, 65, 65);
+    padding: 10px;
+    width: 30%;
+    margin-left: 500px;
+    background-color: #98f7ae;
+    height: 550px;
+    border-radius: 8px;
+    height: 650px;
+}
+
+input[type="submit"]{
+    background-color: #4ac204;
+    color: #0b0a0a;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    width: 90%;
+    margin-left: 20px;
+}
+
+.btn2 {
+    background-color: #4ac204;
+    color: #0b0a0a;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 27px;
+    text-align: center;
+    width: 70%;
+}
+
+.user_login {
+    background: url(./images/Stock/gabriel-beaudry-WuQME0I_oZA-unsplash.jpg) no-repeat center center/cover;
+    height: 100vh;
+}
+
+.user_login label {
+    margin-left: 10px;
+}
+
+.user_login h4 {
+    margin-left: 90px;
+}
+
+.user_login h1 {
+    font-weight: bold;
+    margin-left: 165px;
+}

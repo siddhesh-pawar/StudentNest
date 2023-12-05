@@ -8,6 +8,7 @@
     <script src="https://kit.fontawesome.com/4e8ac64d32.js" crossorigin="anonymous"></script>
     <title>Welcome to HouseUp</title>
 </head>
+
 <body id="home">
     <header class="hero">
         <div id ="navbar" class="navbar">
@@ -17,8 +18,8 @@
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="#about">About</a></li>
-                    <li><a href="#cases">Cases</a></li>
-                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="/register">Register</a></li>
+                    <li><a href="/createListings">Create Listing</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
@@ -32,200 +33,41 @@
     </header>
 
 <!-- Info -->
-    <section class="info" id="about">
-        <div class="about-info bg-light">
-            <div class="sec">
-                <i class="fa-solid fa-house fa-xl" style="color: #41940a;"></i>
-                <h3>Comfortable homes</h3>
-                <p>Explore a wide range of cozy apartments that feels just like home.</p>
-            </div>
+<section class="info" id="about">
+    <div class="about-info bg-light">
+        <div class="sec">
+            <i class="fa-solid fa-house fa-xl" style="color: #41940a;"></i>
+            <h3>Comfortable homes</h3>
+            <p>Explore a wide range of cozy apartments that feels just like home.</p>
+        </div>
 
-            <div class="sec">
-                <i class="fa-solid fa-magnifying-glass fa-xl" style="color: #41940a;"></i>
-                <h3>Easy search</h3>
-                <p>Our user-friendly serach filters make it a breeze to discover the perfect home off-campus.</p>
-            </div>
-                
-            <div class="sec">
-                <i class="fa-solid fa-school fa-xl" style="color: #41940a;"></i>
-                <h3>Close to campus</h3>
-                <p>Reduce commute time and be close to all that campus life has to offer.</p>
-            </div>
+        <div class="sec">
+            <i class="fa-solid fa-magnifying-glass fa-xl" style="color: #41940a;"></i>
+            <h3>Easy search</h3>
+            <p>Our user-friendly serach filters make it a breeze to discover the perfect home off-campus.</p>
+        </div>
             
+        <div class="sec">
+            <i class="fa-solid fa-school fa-xl" style="color: #41940a;"></i>
+            <h3>Close to campus</h3>
+            <p>Reduce commute time and be close to all that campus life has to offer.</p>
         </div>
-    </section>
-
-    <!-- About 2 -->
-    <section class="info2">
-        <div class="about-info2">
-            <div class="sec2">
-                <img src="./images/Stock/brooke-cagle-g1Kr4Ozfoac-unsplash.jpg" alt="">
-            </div>
-            <div class="sec2b">
-                <h1 id="head">What are you looking for</h1>
-                <p class="select-p">Are you a PSU student embarking on the exciting journey of finding off-campus accomodation? You're not alone, and we're here to make it a smooth experience. At HouseUp, we understand the importance of finding the right place to call home during your college years.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Login -->
-    <!DOCTYPE html>
-<html>
-<head>
-    <title>User Account Registration</title>
-    <script>
-        function validateForm() {
-            var name = document.getElementById("name").value;
-            var email = document.getElementById("email").value;
-            var password = document.getElementById("password").value;
-            var repassword = document.getElementById("repassword").value;
-
-            if (name === "" || email === "" || password === "" || repassword === "") {
-                alert("All fields are required");
-                return false;
-            }
-
-            if (password !== repassword) {
-                alert("Passwords do not match");
-                return false;
-            }
-
-            return true;
-        }
-    </script>
-</head>
-<body>
-    <h2>User Account Registration</h2>
-    <form action="" method="post" onsubmit="return validateForm()">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required><br><br>
         
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required><br><br>
-        
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required><br><br>
-        
-        <label for="repassword">Re-enter Password:</label>
-        <input type="password" id="repassword" name="repassword" required><br><br>
-        
-        <input type="submit" value="Register">
-    </form>
-</body>
-</html>
+    </div>
+</section>
 
-    
-    <!-- Blog -->
-    <section class="blog" id="blog">
-        
-        <div class="blog-post">
-            <div class="blog-half">
-                    <h4>16 April 2020</h4>
-                    <h1>Blog Post One</h1>
-                    <p></p>
-                    <a href="blog.html" class="btn-secondary">Read our blog</a>
-                
-            </div>
-
-            <div class="blog-half">
-                
-                    <img src="./images/home/blog.jpg" class="blog1" height="500" alt="">
-                </div>
-                
-            </div>
+<!-- About 2 -->
+<section class="info2">
+    <div class="about-info2">
+        <div class="sec2">
+            <img src="./images/Stock/brooke-cagle-g1Kr4Ozfoac-unsplash.jpg" alt="">
         </div>
-    </section>
-
-    <!-- Team -->
-    <section class="sec3">
-        <div class="team">
-            <div class="team-info">
-                <h4>Join us now</h4>
-            </div>
-
-            <div class="team-info">
-                <h1>Let us embark on a journey of a lifetime</h1>
-            </div>
-
-            <div class="team-info">
-                <p></p>
-            </div>
+        <div class="sec2b">
+            <h1 id="head">What are you looking for</h1>
+            <p class="select-p">Are you a PSU student embarking on the exciting journey of finding off-campus accomodation? You're not alone, and we're here to make it a smooth experience. At HouseUp, we understand the importance of finding the right place to call home during your college years.</p>
         </div>
-
-        <div class="peeps">
-            <div class="people">
-                <div class="execs">
-                    <img src="./images/alexandra-gorn-JIUjvqe2ZHg-unsplash.jpg" height="270" alt="">
-                    <h4>Comfortable homes</h4>
-                    <p></p>
-                </div>
-
-                <div class="execs">
-                    <img src="./images/harry-shelton-pPxhM0CRzl4-unsplash.jpg" height="270" alt="">
-                    <h4>Prime location</h4>
-                    <p></p>
-                </div>
-
-                <div class="execs">
-                    <img src="./images/priscilla-du-preez-XkKCui44iM0-unsplash.jpg" height="270" alt="">
-                    <h4>Fun community</h4>
-                    <p></p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact -->
-    <section class="contact" id="contact">
-        <div class="callback">
-            
-                <img src="./images/home/contact.jpg" alt="">
-            
-
-            <div class="details">
-                <h1>Request Callback</h1>
-                
-                <input type="text" placeholder="Enter Name"><br>
-                <input type="email" placeholder="Enter Email"><br>
-                <input type="number" placeholder="Enter Contact"><br>
-                <button class="btn">Send</button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bottom">
-        <div class="end">
-            <div class="icons">
-                <i class="fa-brands fa-facebook fa-2xl" style="color:white"></i>
-            </div>
-
-            <div class="icons">
-                <i class="fa-brands fa-twitter fa-2xl" style="color:white"></i>
-            </div>
-
-            <div class="icons">
-                <i class="fa-brands fa-youtube fa-2xl" style="color:white"></i>
-            </div>
-                
-            <div class="icons">
-                <i class="fa-brands fa-linkedin fa-2xl" style="color:white"></i>
-            </div>
-        </div>
-
-        <div class="copyright">
-            <p>Copyright &copy; 2020 - StudentNest</p>
-        </div>
-    </footer>
+    </div>
+</section>
 
 </body>
 </html>
-
-<!-- <div class="details">
-    <h1>Request Callback</h1>
-    
-    <input type="text" placeholder="Enter Name"><br>
-    <input type="email" placeholder="Enter Email"><br>
-    <input type="number" placeholder="Enter Contact"><br>
-    <button class="btn">Send</button>
-</div> -->

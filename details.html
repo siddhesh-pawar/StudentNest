@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style2.css" />
+    <link rel="script" href="script.js" />
+    <title>Apartment Details</title>
+  </head>
+  <style>
+    
+    /* container {
+      color: #fff;
+    } */
+    details {
+      color: #fff;
+    }
+  </style>
+  <body>
+    <video autoplay loop id="video-background" muted>
+      <source src="../The Collective on 4th.mp4" type="video/webm" />
+    </video>
+    <div id ="navbar" class="navbar">
+
+        <h1 class="logo"> <i class="fa-solid fa-house-user" style="color: #11b805;"></i> <span class="text-primary">House</span>Up</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="/login">Login</a></li>
+                <li><a href="/register">Register</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="container">
+      <h1>
+          <i class="fa-solid fa-house-user" style="color: #11b805;"></i>
+          <span class="text-primary">APARTMENT</span> DETAILS
+      </h1>
+
+      <!-- Filtering dropdowns -->
+      <label for="sortByPrice">Sort by Price:</label>
+<select id="sortByPrice">
+    <option value="ascending">Ascending</option>
+    <option value="descending">Descending</option>
+</select>
+<br>
+
+      <label for="filterByName">Filter by Apartment Name:</label>
+      <select id="filterByName">
+          <option value="all">All</option>
+          <option value="Collective On 4th">Collective On 4th</option>
+          <option value="CYAN PDX">CYAN PDX</option>
+          <option value="Goose Hollow">Goose Hollow</option>
+          <option value="University Pointe">University Pointe</option>
+      </select>
+<br>
+      <label for="filterByPets">Filter by Pets:</label>
+      <select id="filterByPets">
+          <option value="all">All</option>
+          <option value="Yes">Yes</option>
+          <option value="No">No</option>
+      </select>
+<br>
+      <label for="filterByBedrooms">Filter by Number of Bedrooms:</label>
+      <select id="filterByBedrooms">
+          <option value="all">All</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+      </select>
+<br>     
+      <!-- <button id="applyFiltersBtn">Apply Filters</button> -->
+
+      <div id="details">
+          <!-- Details will be dynamically added here by the script -->
+      </div>
+  </div>
+
+
+    <script>
+      // document.addEventListener("DOMContentLoaded", function () {
+      //     // Clear local storage on page load
+      //     localStorage.removeItem("apartmentDetails");
+      // });
+    </script>
+
+    <script src="details.js"></script>
+  </body>
+</html>

@@ -1,25 +1,19 @@
-// This class performs client side validation
-class FormValidator {
-    constructor(name, email, password, confirmPassword) {
-        this.name = name;
-        this.email = email;
-        this.password = password;
-        this.confirmPassword = confirmPassword;
+function validateForm() {
+    var name = document.getElementById("name").value;
+    var email = document.getElementById("email").value;
+    var password = document.getElementById("password").value;
+    var confirmPassword = document.getElementById("confirmPassword").value;
+
+    if (name === "" || email === "" || password === "" || confirmPassword === "") {
+        alert("All fields are required");
+        return false;
     }
 
-    validateForm() {
-        if (this.name === "" || this.email === "" || this.password === "" || this.confirmPassword === "") {
-            alert("All fields are required");
-            return false;
-        }
-
-        if (this.password !== this.confirmPassword) {
-            alert("Passwords do not match");
-            return false;
-        }
-
-        return true;
+    if (password !== confirmPassword) {
+        alert("Passwords do not match");
+        return false;
     }
+
+    return true;
 }
-
-module.exports = { FormValidator };
+module.exports = { validateForm };

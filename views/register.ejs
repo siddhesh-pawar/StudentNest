@@ -1,0 +1,173 @@
+
+<head>
+    <meta charset="UTF-8">
+    <title>Signup</title>
+    <!-- <link rel="stylesheet" type="text/css" href="signup.css"> -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.js">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.min.css.map">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.min.js">
+</head>
+<style>
+    @font-face {
+font-family: Oxanium-Bold;
+src: url(../StudentNest/fonts/Oxanium-Bold.ttf);
+font-display: swap;
+} 
+@font-face {
+font-family: grind;
+src: url(../StudentNest/fonts/grind_demolished-webfont.woff2);
+font-display: swap;
+}
+    *{
+font-family: Oxanium-Bold;
+src: url(../StudentNest/fonts/Oxanium-Bold.ttf);
+}
+body{
+background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("./images/1.jpeg");
+background-size: cover;	 
+}
+.datalist
+{
+background-color: black;
+color:white;	
+}
+.aclk{
+color:  #03a9f4;
+text-decoration: none;
+}
+.aclk:hover{
+color:green ;
+}
+h1{
+font-family: grind;
+src: url(../StudentNest/fonts/grind_demolished-webfont.woff2);
+text-align: center;
+
+font-weight: 90px;
+font-family: sans-serif;
+}
+h1:hover{
+color: white;
+
+}
+.form{
+    max-width: 400px;
+    background: rgba(0, 0, 0, .57);
+    border-radius: 20px;
+    box-sizing: border-box ;
+    padding: 40px;
+    margin: auto;
+    color: white;
+    margin-top: 100px;	
+    margin-bottom: 50px;
+}
+input[type=text],input[type=password], input[type=email]{
+width: 100%;
+border-radius: 10px;
+box-sizing: border-box;
+background:black;
+border: none;
+font-weight: 500;
+font-size: 16px;
+outline: none;
+border-bottom: 1px solid white;
+margin: 6px;
+color: white;
+padding: 12px 5px;
+}
+input[type=radio]{
+padding: 12px 5px;
+margin: 5px;
+margin-top: 15px;
+color: white;
+background-color: black;
+}
+button{
+cursor: pointer;
+width: 200px;
+margin-top: 25px;
+margin-left: 60px;
+border-radius: 18px;
+font-size: 25px;
+background-color: #03a9f4;
+outline: none;
+border:none;
+box-sizing: border-box;
+padding: 5px;
+transition-duration:0.4s;
+}
+button:hover{
+background-color: black;
+color: #ffff;
+border: 1px solid #03a9f4;
+}
+.rad{
+font-weight: 400;
+text-align: center;
+margin: 15px;
+margin-top: 20px;
+color: white;
+}
+select{
+width: 100%;
+border-radius: 10px;
+box-sizing: border-box;
+border: none;
+outline: none;
+font-weight: 100;
+font-size: 16px;
+border-bottom: 1px solid white;
+margin: 5px;
+color: white;
+background-color: black;
+padding:12px 5px;
+}
+.selq{
+width: 100%;
+border-radius: 10px;
+box-sizing: border-box;
+background:black;
+border: none;
+font-weight: 500;
+font-size: 16px;
+outline: none;
+border-bottom: 1px solid white;
+margin: 6px;
+color: gray;
+padding: 12px 5px;	
+}
+
+</style>
+<body>
+    
+
+    <div class="form">
+        <h1><i style="color: #11b805;"></i> <span class="text-primary">Sign </span>Up</h1>
+        <section class="user_registration" id="register">
+            <div class="container">
+                <h2>User Account Registration</h2><br>
+                <form action="/register" method="post" onsubmit="return validateForm()">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required><br>
+                    
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required><br>
+                    
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required><br>
+                    
+                    <label for="confirmPassword">Re-enter Password:</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" required><br>
+                    
+                    <button class="btn2" type="submit">Register</button>
+                </form>
+                <br>
+                <p>Already have an account? <a href="/login" style="color:red">Login</a></p>
+            </div>
+        </section>
+      </div>
+    
+</body>
+<script src="form.js"></script>
