@@ -53,67 +53,53 @@ class ApartmentManager {
         apartmentSection.appendChild(apartmentDetailsDiv);
         return apartmentSection;
     }
-    function sortAndFilterDetails(detailsArray, sortByPrice, filterByName, filterByPets, filterByBedroomsCount) {
-        // Sort by price
-        if (sortByPrice === "ascending") {
-            detailsArray.sort((a, b) => a.price - b.price);
-        } else if (sortByPrice === "descending") {
-            detailsArray.sort((a, b) => b.price - a.price);
-        }
-    
-        // Filter by apartment name
-        if (filterByName !== "all") {
-            detailsArray = detailsArray.filter(details => details.name === filterByName);
-        }
-    
-        // Filter by pet preferences
-        if (filterByPets !== "all") {
-            detailsArray = detailsArray.filter(details => details.pets === filterByPets);
-        }
-    
-        // Filter by number of bedrooms
-        if (filterByBedroomsCount !== "all") {
-            detailsArray = detailsArray.filter(details => details.numBedrooms === filterByBedroomsCount);
-        }
-    
-        return detailsArray;
+    formatPrice(price) {
+        return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(price);
     }
-    
-    // Initial display on page load
-    var storedDetails = localStorage.getItem("apartmentDetails");
-    var initialDetailsArray = storedDetails ? JSON.parse(storedDetails) : [];
-    displayDetails(initialDetailsArray);
 
-    // Add event listeners to trigger the displayDetails function when user input changes
-    document.getElementById("sortByPrice").addEventListener("change", function () {
-        var filteredDetailsArray = sortAndFilterDetails(initialDetailsArray, this.value, document.getElementById("filterByName").value, document.getElementById("filterByPets").value, document.getElementById("filterByBedrooms").value);
-        displayDetails(filteredDetailsArray);
-    });
-    
-    document.getElementById("filterByName").addEventListener("change", function () {
-        var filteredDetailsArray = sortAndFilterDetails(initialDetailsArray, document.getElementById("sortByPrice").value, this.value, document.getElementById("filterByPets").value, document.getElementById("filterByBedrooms").value);
-        displayDetails(filteredDetailsArray);
-    });
-    
-    document.getElementById("filterByPets").addEventListener("change", function () {
-        var filteredDetailsArray = sortAndFilterDetails(initialDetailsArray, document.getElementById("sortByPrice").value, document.getElementById("filterByName").value, this.value, document.getElementById("filterByBedrooms").value);
-        displayDetails(filteredDetailsArray);
-    });
-    
-    document.getElementById("filterByBedrooms").addEventListener("change", function () {
-        var filteredDetailsArray = sortAndFilterDetails(initialDetailsArray, document.getElementById("sortByPrice").value, document.getElementById("filterByName").value, document.getElementById("filterByPets").value, this.value);
-        displayDetails(filteredDetailsArray);
-    });
+    SortAndFilterDetails() {
+        let filteredDetailsArray = [...this.apartmentDetails];
 
-    document.getElementById("applyFiltersBtn").addEventListener("click", function () {
-        // Get the selected values from dropdowns
-        var sortByBedrooms = document.getElementById("sortByBedrooms").value;
-        var filterByName = document.getElementById("filterByName").value;
-        var filterByPets = document.getElementById("filterByPets").value;
-        var filterByBedroomsCount = document.getElementById("filterByBedrooms").value;
+        const sortByPrice = document.getElementById("sortByPrice").value;
+        const filterByName = document.getElementById("filterByName").value;
+        const filterByPets = document.getElementById("filterByPets").value;
+        const filterByBedroomsCount = document.getElementById("filterByBedrooms").value;
 
-        // Apply filters and display details
-        var filteredDetailsArray = sortAndFilterDetails(initialDetailsArray, sortByBedrooms, filterByName, filterByPets, filterByBedroomsCount);
-        displayDetails(filteredDetailsArray);
-    });
+        // Sorting
+        if (sortByPrice === "ascending") {
+            filteredDetailsArray.sort((a, b) => a.price - b.price);
+        } else if (sortByPrice === "descending") {
+            filteredDetailsArray.sort((a, b) => b.price - a.price);
+        }
+
+        // Filtering
+        if (filterByName !== "all") {
+            filteredDetailsArray = filteredDetailsArray.filter(details => details.name === filterByName);
+        }
+
+        if (filterByPets !== "all") {
+            filteredDetailsArray = filteredDetailsArray.filter(details => details.pets === filterByPets);
+        }
+
+        if (filterByBedroomsCount !== "all") {
+            filteredDetailsArray = filteredDetailsArray.filter(details => details.numBedrooms === filterByBedroomsCount);
+        }
+
+        return filteredDetailsArray;
+    }
+
+    HandleFilterChange() {
+        const filteredDetailsArray = this.sortAndFilterDetails();
+        this.displayDetails(filteredDetailsArray);
+    }
+
+    HandleApplyFilters() {
+        const filteredDetailsArray = this.sortAndFilterDetails();
+        this.displayDetails(filteredDetailsArray);
+    }
+}
+
+// Initialize the ApartmentManager class on DOMContentLoaded
+document.addEventListener("DOMContentLoaded", () => {
+    new ApartmentManager();
 });
