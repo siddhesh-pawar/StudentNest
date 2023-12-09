@@ -5,12 +5,12 @@ class ApartmentManager {
         this.displayDetails();
     }
 
-    retrieveDetailsFromLocalStorage() {
+    RetrieveDetailsFromLocalStorage() {
         const storedDetails = localStorage.getItem("apartmentDetails");
         return storedDetails ? JSON.parse(storedDetails) : null;
     }
 
-    initializeListeners() {
+    InitializeListeners() {
         document.getElementById("sortByPrice").addEventListener("change", () => this.handleFilterChange());
         document.getElementById("filterByName").addEventListener("change", () => this.handleFilterChange());
         document.getElementById("filterByPets").addEventListener("change", () => this.handleFilterChange());
@@ -18,7 +18,7 @@ class ApartmentManager {
         document.getElementById("applyFiltersBtn").addEventListener("click", () => this.handleApplyFilters());
     }
 
-    displayDetails() {
+    DisplayDetails() {
         const detailsDiv = document.getElementById("details");
         detailsDiv.innerHTML = "<h2>All Apartment Details</h2>";
 
@@ -28,7 +28,7 @@ class ApartmentManager {
         });
     }
 
-    createApartmentSection(details, index) {
+    CreateApartmentSection(details, index) {
         const apartmentSection = document.createElement("article");
         apartmentSection.classList.add("apartment-section");
 
